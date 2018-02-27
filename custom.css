@@ -2,6 +2,7 @@
 	color: rgb(0, 127, 31) !important;
 	font-weight: 600;
 }
-#nav{
-	border-bottom: 1px solid rgb(42,35,36);
+.width{
+	width: 60%;
+	margin-left: 20%;
 }
