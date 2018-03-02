@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <!-- Links -->
+   <script type="text/javascript" src="links.js"></script>
+   <script type="text/javascript" src="include.js"></script>
+
+  </head>
+  <body>
+    <div id="nav" include="menu.html"></div>
+    <section class="hero is-light">
+      <div class="hero-body width">
+        <h1 class="title">
+          About
+        </h1>
+        <h2 class="subtitle">
+          About the website and me
+        </h2>
+        <br/>
+      </div>
+    </section>
+     <div class="content width">
+      <h1>About</h1>
+      <ul>
+        <li>About the website</li>
+        <li>About me</li>
+      </ul>
+      <h3>About the website</h3>
+      <p>I created this website to share what I have learnt with others online. I looked online, and I couldn't find any well designed, easy to learn tutorial websites out there. I try to make everything on here unique and I try to include things that are helpful that you may not have ever thought of before. I always try to make sure that anything that is written as a tutorial can be understood from the beginner level so that anyone is able to understand my tutorials. 
+      <br/>
+      <hr/>
+      <br/>
+      <h3>About Me</h3>
+      <p>You can find out about me on my main website <a href="http://dylanturner.tech">here</a>. My main website has lots of other cool things on it, such as a list of tools I have created which is quite simular to this website except features games such as Mastermind and Hangman. If you want to play those, go to my website, click the tools button and then go to the games section where you will find a selection of games. If you want to find out about me personally, my other projects or read my blog you can go to my website and click the respective links in the menu.</p> 
+      <div id="disqus_thread"></div>
+        <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = HELP; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://dylan-t.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments.</a></noscript>
+        <script id="dsq-count-scr" src="//dylan-t.disqus.com/count.js" async></script>
+      </div>
+    </body>
+    <br/>
+    <div include="footer.html"></div>
+  </body>
+  <script>
+    includeHTML();
+  </script>
+</html>
