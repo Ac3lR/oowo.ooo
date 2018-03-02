@@ -21,7 +21,7 @@
         <div class="container">
           <h1 class="title">Including links with Javascript</h1>
           <h2 class="subtitle">
-             Include many css, php or js files using one link!<span class="tag is-warning">JS</span>
+             Include many css or js files using one link!<span class="tag is-warning">JS</span>
           </h2>
           <hr id="hr"/>
         </div>
@@ -53,7 +53,6 @@
     &lt;link href=&quot; https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt; 
     &lt;link href=&quot;universal.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
     &lt;script src=&quot;universal.js&quot;&gt;&lt;/script&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://wikiki.github.io/css/documentation.css?v=201801141121&quot;&gt;
     &lt;script defer src=&quot;https://use.fontawesome.com/releases/v5.0.6/js/all.js&quot;&gt;&lt;/script&gt;
   &lt;/head&gt;
   &lt;body&gt;
@@ -82,7 +81,7 @@ loadjscssfile("universal.js", "css")
       <br/>
       <p>Now we have written a function that accepts two paramaters, filename and filetype. We have also called this function 4 times, with our 4 different files and their types. What we want to do now is make a function that wil load all of these files that we call the funtion with. Lets start off by checking out the file extenstion by creating some if statements.</p>
       <p>
-        <h4>links.js</h4>
+      <h4>links.js</h4>
       <code>
         <pre>
 function loadjscssfile(filename, filetype){
@@ -105,10 +104,62 @@ loadjscssfile("universal.js", "css")
       <br/>
       <br/>
       <p>
-        And our program works! See how big of a number you can find the factorial of without it crashing!<br/>
-        If you have any questions, please post below.
+       Now we know what each file wants to load. So now lets add our loading code that will load the files into our page.
+      <ul>
+        <li>1 - Here we are creating a variable called file reference, and we are creating the element script which we can later edit</li>
+        <li>2 - Here we are setting the attributes of the file reference, so that its type is javascript.</li>
+        <li>3 - Finally we are setting the src of the file to be the filename that we inputed. Now this if statment has created a HTML element of script, with the src of the filename that we wanted.</li>
+        <li>4 - We do the same with the css, creating a link element on our document.</li>
+        <li>5 - We continue to set the attributes as you would expect with a normal link tag.</li>
+        <li>6 - We finally set the href to equal the filename, and now we have loaded in our css file.</li>
+      </ul>
       </p>
-
+      <h4>links.js</h4>
+      <code>
+        <pre>
+function loadjscssfile(filename, filetype){
+    if (filetype=="js"){
+        var fileref=document.createElement('script') // 1
+        fileref.setAttribute("type","text/javascript") // 2 
+        fileref.setAttribute("src", filename) // 3
+    }
+    if (filetype=="css"){
+        var cssfileref=document.createElement("link") // 4
+        cssfileref.setAttribute("rel", "stylesheet") // 5
+        cssfileref.setAttribute("type", "text/css") 
+        cssfileref.setAttribute("href", filename) // 6
+    }
+    else{
+     print("you made a typo") // :)
+    }
+}
+loadjscssfile("https://use.fontawesome.com/releases/v5.0.7/js/all.js", "js")
+loadjscssfile("https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css", "css")
+loadjscssfile("universal.css", "css")
+loadjscssfile("universal.js", "css")
+      </pre>
+      </code>
+      <p>Give that a test run, and it should work. Make sure that your HTML now looks like below</p>
+      <h4>index.html</h4>
+      <code>
+        <pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Example&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;links.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;index.js&quot; type=&quot;text/javascript&quot;&gt; &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+   &lt;!--Random body stuff here --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+      </code>
+      <p>We now only have 2 links, one to the links.js which will load all our other files and the other to index.js as we want the index.html to have different javascript to all the other pages. If you want to test this simply, make a index.html and links.js. On both pages have "Hello World" in h1 tags and have a stylesheet with some styling for the h1 tag. Then endit the links.js to load in your css file, and the h1 tags should be as you have styled them.</p>
+      <p><a href="examples/includingLinksExample.html">Here</a> is a working (very simple) demo below:</p>
+      <iframe src="examples/includingLinksExample.html"></iframe>
+      <p class="small"><i class="fas fa-info-circle"></i> I would usually provide a fiddle, but because the files in fiddles are already linked up I thought it more beneficial to make an example which can be found <a href="examples/includingLinksExample.html">here</a>.</p>
+      <p>Hopefully that helped you to make your HTML neater and be able to modify links with easy, which is extremely helpful when something like fontawesome updates their script link. If you have any questions of comments, post below.</p>
       <div id="disqus_thread"></div>
         <script>
 
@@ -118,7 +169,7 @@ loadjscssfile("universal.js", "css")
         
         var disqus_config = function () {
         this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = factorialCalculator; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.identifier = includingLinks; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         };
         
         (function() { // DON'T EDIT BELOW THIS LINE
