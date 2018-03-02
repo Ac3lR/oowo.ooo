@@ -1,0 +1,157 @@
+<html>
+  <head>
+    <!-- Links -->
+   <script type="text/javascript" src="links.js"></script>
+   <!--<script type="text/javascript" src="include.js"></script>-->
+   <style>
+
+   #header{
+    margin-left: 20%;
+    width: 60%;
+   }
+   #hr{
+    width: 60%;
+   }
+   </style>
+  </head>
+  <body>
+    <div id="nav" include="menu.html"></div>
+    <br/>
+      <section id="header" class="section">
+        <div class="container">
+          <h1 class="title">Including links with Javascript</h1>
+          <h2 class="subtitle">
+             Include many css, php or js files using one link!<span class="tag is-warning">JS</span>
+          </h2>
+          <hr id="hr"/>
+        </div>
+      </section>
+    </body>
+    <div class="content width">
+      <h1>Including links with Javascript</h1>
+
+      <article class="message is-info">
+        <div class="message-body">
+          <strong>Prerequisites</strong><br/>
+          <p>To understand this tutorial it is reccomended that you have a basic understanding of Javascript, HTML and CSS. You can probably work out how to do this without any prior knowledge though.</p>
+        </div>
+      </article>
+
+      <h3>Introduction</h3>
+      <p>No one want's a bunch of links at the top of their files. Having lots of links to css, js and php files is sometimes in-avertable but it leads to messy HTML. Another problem with 
+      <h4>Javascript:</h4>
+      <code>
+        <pre>
+
+function factorial(n){
+
+  var temp;
+  for (var i = 1; i <= n; i = i + 1){
+    // will run this loop 1 to n times.
+    // in this case 5.
+  }
+  return temp;
+}
+var result = factorial(5);
+console.log(result);
+    </pre>
+      </code>
+      <br/>
+      <br/>
+      <h4>Swift:</h4>
+      <code>
+        <pre>
+
+func factorial(_ pram: Int) -> Int{
+  
+  var temp = 1
+    for i in 1...pram{
+      // will run this loop 1 to n times.
+      // in this case 5.
+    }
+   return temp
+}
+var result = factorial(5)
+print(result)
+        </pre>
+      </code>
+      <br/>
+      <p> In the above examples we simple create a function, with a paramater which is the number of our factorial. We then pass that number into our function and then we run a loop that will loop through from 1 to our paramater. Now we want to make it so that we multiply each time the loop runs, which will give us our factorial. We can do this by setting a default value of 1, then multiplying it by i which is the loop counter.</p>
+      <br/>
+      <h4>Javascript:</h4>
+      <code>
+        <pre>
+
+function factorial(n){
+  var temp = 1;
+  for (var i = 1; i <= n; i = i + 1){
+    temp = temp * i;
+  }
+  return temp;
+}
+var result = factorial(5);
+console.log(result);
+    </pre>
+      </code>
+      <br/>
+      <br/>
+      <h4>Swift:</h4>
+      <code>
+        <pre>
+
+func factorial(_ pram: Int) -> Int{
+
+    var temp = 1
+    for i in 1...pram{
+      temp = temp * i
+    }
+   return temp
+}
+var result = factorial(5)
+print(result)
+        </pre>
+      </code>
+      <br/>
+      <p>Above we have simply made a loop that will now multiply all the numbers up to 5 (our input) together. The loop will run 5 times, if we walk through the loop you can see how it works: </p>
+      <p>
+        <ol>
+          <li>The loop runs once, i now equals 1, temp now equals 1.</li>
+          <li>The loop runs again, i now equals 2, temp now equals 2.</li>
+          <li>The loop runs again, i now equals 3, temp now equals 6.</li>
+          <li>The loop runs again, i now equals 4, temp now equals 24.</li>
+          <li>The loop runs again, i now equals 5, temp now equals 120.</li>
+        </ol>
+      </p>
+      <p>
+        And our program works! See how big of a number you can find the factorial of without it crashing!<br/>
+        If you have any questions, please post below.
+      </p>
+
+      <div id="disqus_thread"></div>
+        <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = factorialCalculator; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://dylan-t.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments.</a></noscript>
+        <script id="dsq-count-scr" src="//dylan-t.disqus.com/count.js" async></script>
+      </div>
+      <div include="footer.html"></div>
+  </body>
+  <script>
+    includeHTML();
+  </script>
+</html>
