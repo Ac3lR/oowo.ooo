@@ -88,10 +88,10 @@ function loadjscssfile(filename, filetype){
     if (filetype=="js"){
     // is a js file
     }
-    if (filetype=="css"){
+    else if (filetype=="css"){
     // is a css file
     }
-    else{
+    if (typeof fileref!="undefined"){
     // is not a css or js file
     }
 }
@@ -112,6 +112,7 @@ loadjscssfile("universal.js", "css")
         <li>4 - We do the same with the css, creating a link element on our document.</li>
         <li>5 - We continue to set the attributes as you would expect with a normal link tag.</li>
         <li>6 - We finally set the href to equal the filename, and now we have loaded in our css file.</li>
+        <li>7 - Incase the file is undefined, tries to load it.</li>
       </ul>
       </p>
       <h4>links.js</h4>
@@ -123,14 +124,14 @@ function loadjscssfile(filename, filetype){
         fileref.setAttribute("type","text/javascript") // 2 
         fileref.setAttribute("src", filename) // 3
     }
-    if (filetype=="css"){
-        var cssfileref=document.createElement("link") // 4
-        cssfileref.setAttribute("rel", "stylesheet") // 5
-        cssfileref.setAttribute("type", "text/css") 
-        cssfileref.setAttribute("href", filename) // 6
+    else if (filetype=="css"){ //if filename is an external CSS file
+      var fileref=document.createElement("link") //4 
+      fileref.setAttribute("rel", "stylesheet") // 5
+      fileref.setAttribute("type", "text/css")
+      fileref.setAttribute("href", filename)// 7
     }
-    else{
-     print("you made a typo") // :)
+    if (typeof fileref!="undefined"){
+      document.getElementsByTagName("head")[0].appendChild(fileref) //7
     }
 }
 loadjscssfile("https://use.fontawesome.com/releases/v5.0.7/js/all.js", "js")
