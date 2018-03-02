@@ -10,9 +10,10 @@
 	padding-top: 150px;
 }
 code{
+	display: block;
 	color: white;
 	background-color: rgb(35,35,35) !important;
-	padding: 25px;
+	padding: 10px;
 	border-radius: 15px;
 }
 .yellow:hover{
@@ -20,4 +21,9 @@ code{
 }
 .yellow{
 	color: #f2e63c !important;
+}
+pre{
+    /* basic modern patch */
+    all: initial;
+    all: unset;
 }
