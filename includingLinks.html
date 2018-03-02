@@ -21,7 +21,7 @@
         <div class="container">
           <h1 class="title">Including links with Javascript</h1>
           <h2 class="subtitle">
-             Include many css or js files using one link!<span class="tag is-warning">JS</span>
+             Include many css or js files using one link! <span class="tag is-dark">Featured</span> <span class="tag is-warning">JS</span>
           </h2>
           <hr id="hr"/>
         </div>
@@ -139,7 +139,8 @@ loadjscssfile("universal.css", "css")
 loadjscssfile("universal.js", "css")
       </pre>
       </code>
-      <p>Give that a test run, and it should work. Make sure that your HTML now looks like below</p>
+      <br/>
+      <p>Give that a test run, and it should work. If you are having issues, make sure that your HTML now looks like below as we no longer need all those excess files.</p>
       <h4>index.html</h4>
       <code>
         <pre>
@@ -155,6 +156,7 @@ loadjscssfile("universal.js", "css")
 &lt;/html&gt;
         </pre>
       </code>
+      <br/>
       <p>We now only have 2 links, one to the links.js which will load all our other files and the other to index.js as we want the index.html to have different javascript to all the other pages. If you want to test this simply, make a index.html and links.js. On both pages have "Hello World" in h1 tags and have a stylesheet with some styling for the h1 tag. Then endit the links.js to load in your css file, and the h1 tags should be as you have styled them.</p>
       <p><a href="examples/includingLinksExample.html">Here</a> is a working (very simple) demo below:</p>
       <iframe src="examples/includingLinksExample.html"></iframe>
