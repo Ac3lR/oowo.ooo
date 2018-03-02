@@ -24,6 +24,7 @@ code{
 }
 pre{
     /* basic modern patch */
-    all: initial;
-    all: unset;
+    background-color: transparent;
+    color: white;
+    font-size: 100%;
 }

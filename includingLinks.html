@@ -1,6 +1,8 @@
 <html>
   <head>
-
+    <!--Links -->
+    <script type="text/javascript" src="links.js"></script>
+    <script type="text/javascript" src="include.js"></script>
    <style>
 
    #header{
@@ -43,75 +45,65 @@
       <h4>index.html</h4>
       <code>
         <pre>
-
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Example&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;links.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;index.js&quot; type=&quot;text/javascript&quot;&gt; &lt;/script&gt;
+    &lt;link href=&quot; https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt; 
+    &lt;link href=&quot;universal.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+    &lt;script src=&quot;universal.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://wikiki.github.io/css/documentation.css?v=201801141121&quot;&gt;
+    &lt;script defer src=&quot;https://use.fontawesome.com/releases/v5.0.6/js/all.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+   &lt;!--Random body stuff here --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
         </pre>
       </code>
       <br/>
       <br/>
-      <h4>Swift:</h4>
+      <p> So, as you can see, sometimes files build up and it gets really messy to have them at the top of every page on your website, especially if you website has more that 5 pages. Lets say that every other page on our website also requires access to bulma, universal.css, universal.js and we also want font awesome to be on every page. So, lets make a file called "links.js" which will include all of the above links for us.</p>
+      <br/>
+      <h4>links.js</h4>
       <code>
         <pre>
-
-func factorial(_ pram: Int) -> Int{
-  
-  var temp = 1
-    for i in 1...pram{
-      // will run this loop 1 to n times.
-      // in this case 5.
-    }
-   return temp
+function loadjscssfile(filename, filetype){
+    // we will put our code here.
 }
-var result = factorial(5)
-print(result)
-        </pre>
-      </code>
-      <br/>
-      <p> In the above examples we simple create a function, with a paramater which is the number of our factorial. We then pass that number into our function and then we run a loop that will loop through from 1 to our paramater. Now we want to make it so that we multiply each time the loop runs, which will give us our factorial. We can do this by setting a default value of 1, then multiplying it by i which is the loop counter.</p>
-      <br/>
-      <h4>Javascript:</h4>
-      <code>
-        <pre>
-
-function factorial(n){
-  var temp = 1;
-  for (var i = 1; i <= n; i = i + 1){
-    temp = temp * i;
-  }
-  return temp;
-}
-var result = factorial(5);
-console.log(result);
-    </pre>
+loadjscssfile("https://use.fontawesome.com/releases/v5.0.7/js/all.js", "js")
+loadjscssfile("https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css", "css")
+loadjscssfile("universal.css", "css")
+loadjscssfile("universal.js", "css")
+      </pre>
       </code>
       <br/>
       <br/>
-      <h4>Swift:</h4>
-      <code>
-        <pre>
-
-func factorial(_ pram: Int) -> Int{
-
-    var temp = 1
-    for i in 1...pram{
-      temp = temp * i
-    }
-   return temp
-}
-var result = factorial(5)
-print(result)
-        </pre>
-      </code>
-      <br/>
-      <p>Above we have simply made a loop that will now multiply all the numbers up to 5 (our input) together. The loop will run 5 times, if we walk through the loop you can see how it works: </p>
+      <p>Now we have written a function that accepts two paramaters, filename and filetype. We have also called this function 4 times, with our 4 different files and their types. What we want to do now is make a function that wil load all of these files that we call the funtion with. Lets start off by checking out the file extenstion by creating some if statements.</p>
       <p>
-        <ol>
-          <li>The loop runs once, i now equals 1, temp now equals 1.</li>
-          <li>The loop runs again, i now equals 2, temp now equals 2.</li>
-          <li>The loop runs again, i now equals 3, temp now equals 6.</li>
-          <li>The loop runs again, i now equals 4, temp now equals 24.</li>
-          <li>The loop runs again, i now equals 5, temp now equals 120.</li>
-        </ol>
-      </p>
+        <h4>links.js</h4>
+      <code>
+        <pre>
+function loadjscssfile(filename, filetype){
+    if (filetype=="js"){
+    // is a js file
+    }
+    if (filetype=="css"){
+    // is a css file
+    }
+    else{
+    // is not a css or js file
+    }
+}
+loadjscssfile("https://use.fontawesome.com/releases/v5.0.7/js/all.js", "js")
+loadjscssfile("https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css", "css")
+loadjscssfile("universal.css", "css")
+loadjscssfile("universal.js", "css")
+      </pre>
+      </code>
+      <br/>
+      <br/>
       <p>
         And our program works! See how big of a number you can find the factorial of without it crashing!<br/>
         If you have any questions, please post below.
@@ -141,8 +133,7 @@ print(result)
       </div>
       <div include="footer.html"></div>
   </body>
-  <!--Links -->
-  <script type="text/javascript" src="links.js"></script>
+
   
   <script>
     includeHTML();
