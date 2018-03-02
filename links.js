@@ -13,8 +13,8 @@ function loadjscssfile(filename, filetype){
     if (typeof fileref!="undefined")
         document.getElementsByTagName("head")[0].appendChild(fileref)
 }
- 
+loadjscssfile("include.js", "js")
 loadjscssfile("https://use.fontawesome.com/releases/v5.0.7/js/all.js", "js") //dynamically load and add this .js file 
 loadjscssfile("https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css", "css") ////dynamically load and add this .css file
 loadjscssfile("custom.css", "css")
-loadjscssfile("include.js", "js")
+
