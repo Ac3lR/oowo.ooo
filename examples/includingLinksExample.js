@@ -1,17 +1,16 @@
 function loadjscssfile(filename, filetype){
-    if (filetype=="js"){
-        var fileref=document.createElement('script') // 1
-        fileref.setAttribute("type","text/javascript") // 2 
-        fileref.setAttribute("src", filename) // 3
+    if (filetype=="js"){ //if filename is a external JavaScript file
+        var fileref=document.createElement('script')
+        fileref.setAttribute("type","text/javascript")
+        fileref.setAttribute("src", filename)
     }
-    if (filetype=="css"){
-        var cssfileref=document.createElement("link") // 4
-        cssfileref.setAttribute("rel", "stylesheet") // 5
-        cssfileref.setAttribute("type", "text/css") 
-        cssfileref.setAttribute("href", filename) // 6
+    else if (filetype=="css"){ //if filename is an external CSS file
+        var fileref=document.createElement("link")
+        fileref.setAttribute("rel", "stylesheet")
+        fileref.setAttribute("type", "text/css")
+        fileref.setAttribute("href", filename)
     }
-    else{
-     print("you made a typo") // :)
-    }
+    if (typeof fileref!="undefined")
+        document.getElementsByTagName("head")[0].appendChild(fileref)
 }
 loadjscssfile("includingLinksExample.css", "css")
