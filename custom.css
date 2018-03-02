@@ -15,3 +15,9 @@ code{
 	padding: 25px;
 	border-radius: 15px;
 }
+.yellow:hover{
+	color: #f2e63c !important;
+}
+.yellow{
+	color: #f2e63c !important;
+}
