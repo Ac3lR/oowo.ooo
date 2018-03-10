@@ -19,7 +19,14 @@
     <meta name="description" content="Free Factorial Calculator Tutorial Exmaple">
     <title>Tutorials | Contact Form Tutorial PHP</title>
    <style>
-
+    #special{
+      width: 55%;
+      float: left;
+      margin-right: 5%;
+    }
+    #container{
+      overflow: hidden;
+    }
    </style>
   </head>
   <body>
@@ -74,109 +81,102 @@
       <br/>
       <h4>PHP</h4>
       <h5 class="fileName"><i class="fas fa-pencil-alt"></i> contactHandler.php</h5>
-        <pre>
+      <br/>
+      <div id="container">
+        <pre id="special">
           <code>
-&lt;?php 
+&lt;?php //1 
 $errors = '';
-  //'dylant.aus@gmail.com'; //<-----Put Your email address here.
-if(empty($_POST['name'])  || 
+$myemail = 'em@il.com'; // 2<-----Put Your email address here.
+if(empty($_POST['name'])  ||  // 3 
    empty($_POST['email']) || 
    empty($_POST['message']))
-
 {
-    $errors .= "
- Error: all fields are required";
+  $errors .= "\n Error: all fields are required"; // 3.1
 }
-$myemail = $_POST['myemail'];
-$name = $_POST['name']; 
-$email_address = $_POST['email']; 
-$message = $_POST['message']; 
-$answer = $_POST['answer'];
-$type = $_POST['type'];
 
-if (!preg_match(
+$name = $_POST['name']; // 4
+$email_address = $_POST['email']; // 5 
+$message = $_POST['message']; // 5.1
+
+// 6
+if (!preg_match( 
 "/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/i", 
 $email_address))
 {
-    $errors .= "
- Error: Invalid email address";
+  $errors .= "Error: Invalid email address";
 }
 
-if( empty($errors))
+if( empty($errors)) // 7
 {
-  $to = $myemail; 
-  $email_subject = "Riddle Submission By: $name";
-  $email_body = "A new riddle has been submitted/n".
-  "
- Author: $name 
- Email: $email_address 
- Type Of Riddle: 
-
- $type 
- Riddle: 
-
- $message 
- Answer 
-
- $answer"; 
+  $to = $myemail;  // 8
+  $email_subject = "EMAIL SUBJECT";
+  $email_body = "This is an example contact form \n".
+  "\n Submitted By: $name \n Email: $email_address \n Message: $message"; 
   
-  $headers = "From: $myemail
-"; 
+  $headers = "From: $myemail\n"; 
   $headers .= "Reply-To: $email_address";
   
   mail($to,$email_subject,$email_body,$headers);
 
-  header('Location:https://dylanturner.tech');
-} 
+  header('Location:https://dylanturner.tech'); // 9
+}
 ?&gt;
           </code>
         </pre>
       <br/>
       <br/>
-      <h4>Swift:</h4>
-      <code>
-        <pre>
-
-func factorial(_ pram: Int) -> Int{
-
-    var temp = 1
-    for i in 1...pram{
-      temp = temp * i
-    }
-   return temp
-}
-var result = factorial(5)
-print(result)
-        </pre>
-      </code>
-      <br/>
-      <p>Above we have simply made a loop that will now multiply all the numbers up to 5 (our input) together. The loop will run 5 times, if we walk through the loop you can see how it works: </p>
-      <p>
+      <p>Ok, So lets walk through what we are doing here. In the code I have put numbered comments which correspond to explenations here.</p>
         <ol>
-          <li>The loop runs once, i now equals 1, temp now equals 1.</li>
-          <li>The loop runs again, i now equals 2, temp now equals 2.</li>
-          <li>The loop runs again, i now equals 3, temp now equals 6.</li>
-          <li>The loop runs again, i now equals 4, temp now equals 24.</li>
-          <li>The loop runs again, i now equals 5, temp now equals 120.</li>
+          <li>We define our PHP code.</li>
+          <li>This is the email we are sending the form to.</li>
+          <li>This checks if any part of the form is empty, If it is empty it edits the errors string to display an 
+          error regarding filling in the fields (see // 3.1).</li>
+          <li>We define our variables, $name now equals the input for name that the user submitted</li>
+          <li>We do the same for out other inputs, assining them to variables (see 5.1)</li>
+          <li>We now check to see if the email is legit, with a @ symbol and .</li>
+          <li>If there are no errors, its now sends the email</li>
+          <li>The email formatting, this basically puts in a subject line and displays the inputs.</li>
+          <li>This is the page url for where to go once the form is successfully submitted.</li>
         </ol>
-      </p>
+      </div>
+
+      <h4>Next:</h4>
+      <p>So, we have got our processing php and our contact form. It doesn't work yet though as nothing is connected properly. To do this, we have to edit our HTML contact form so that it connects to the PHP.</p>
+<h4>HTML</h4>
+        <pre>
+          <code>
+&lt;form id=&quot;form&quot; method=&quot;POST&quot; name=&quot;contactform&quot; action=&quot;contactHandler.php&quot;&gt;
+  &lt;input class=&quot;full&quot; type=&quot;text&quot; name=&quot;name&quot; placeholder=&quot;Name&quot;&gt;
+  &lt;input class=&quot;full&quot; type=&quot;text&quot; name=&quot;email&quot; placeholder=&quot;yourname@something.com&quot;&gt;
+  &lt;textarea class=&quot;fullarea&quot; name=&quot;message&quot;&gt;&lt;/textarea&gt;
+  &lt;input id=&quot;submit&quot; type=&quot;submit&quot; value=&quot;Submit&quot;&gt;&lt;br&gt;
+&lt;/form&gt;
+          </code>
+        </pre>
       <p>
-        And our program works! See how big of a number you can find the factorial of without it crashing!<br/>
-        If you have any questions, please post below. See the fiddle below for a working example.
+       All we had to do was change it so that the action is to contactHandler.php. We should now be all set for putting this onto our website! <br/>
+       Just a more in depth explination to why I am unable to make an example. I use free web hosting as I find its nice to not have to pay a cent. The issue is that most if not all free hosting providers put limits on how many emails you can send. If I were to make an example, it wouldnt work for long as I would reach the email limit very fast. I am also unable to use PHP with Github as Github hosts static websites and doesn't support PHP so therefore I can't really make a working example. Hopefully in the future I will be able to make a working example.
       </p>
-      <script async src="//jsfiddle.net/1tufoeoo/5/embed/js,html,css,result/dark/"></script>
+      <article class="message is-warning">
+        <div class="message-body">
+          <strong>CSS</strong><br/>
+          <p>Notice, this tutorial doesn't include any CSS (so it will look prettu bad). CSS will be added in the future to this tutorial when I am able to make a demo.</p>
+        </div>
+      </article>
+
       <hr/>
-      <p class="is-small">Last Updated: 10/3/2018, Created 3/3/2018
+      <p class="is-small">Last Updated: 10/3/2018, Created 10/3/2018
         <div class="field is-grouped is-grouped-multiline">
           <div class="control">
             <div class="tags has-addons">
-              <span class="tag is-dark">Swift</span>
-              <span class="tag is-danger">4</span>
+              <span class="tag is-dark">PHP</span>
+              <span class="tag is-link">7.2</span>
             </div>
           </div>
           <div class="control">
             <div class="tags has-addons">
-              <span class="tag is-dark">JS</span>
+              <span class="tag is-dark">HTML</span>
               <span class="tag is-warning">5</span>
             </div>
           </div>
@@ -198,7 +198,7 @@ print(result)
         
         var disqus_config = function () {
         this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = factorialCalculator; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.identifier = contactForm; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         };
         
         (function() { // DON'T EDIT BELOW THIS LINE
