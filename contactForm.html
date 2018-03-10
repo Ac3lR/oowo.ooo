@@ -67,22 +67,68 @@
 &lt;/form&gt;
           </code>
         </pre>
-      <br/>
-      <br/>
+
       <p>In the above code we have made a very simple not working contact form. The contact form asks for your name, email, message and then has a submit button. Now we want to make it to work, which is a bit complicated if your new but hopefully you can understand this.</p>
 
       <p>So, what we want to do is make what we call a form handler. What this does is it recieves all the inputs from the form and then does something with it - in this case sends us an email. Doing this using PHP allows us to send the email and have lots of controll over what we are doing. Note that if your web host doesn't support PHP this will not work. If your webhost doesn't support PHP there are a few ways around that, you can use another webhost that does and use the form externally or you can use a service like <a href="https://formspree.io/">formspree</a> but these services don't give you too much controll and limit the amout of emails you can send. Anyway, lets make our handler.</p>
       <br/>
       <h4>PHP</h4>
-      <h4 class="subtitle">contactHandler.php</h4>
+      <h5 class="subtitle"><i class="fas fa-pencil-alt"></i> contactHandler.php</h5>
         <pre>
           <code>
-&lt;form id=&quot;form&quot; method=&quot;POST&quot; name=&quot;contactform&quot; action=&quot;##&quot;&gt;
-  &lt;input class=&quot;full&quot; type=&quot;text&quot; name=&quot;name&quot; placeholder=&quot;Name&quot;&gt;
-  &lt;input class=&quot;full&quot; type=&quot;text&quot; name=&quot;email&quot; placeholder=&quot;yourname@something.com&quot;&gt;
-  &lt;textarea class=&quot;fullarea&quot; name=&quot;message&quot;&gt;&lt;/textarea&gt;
-  &lt;input id=&quot;submit&quot; type=&quot;submit&quot; value=&quot;Submit&quot;&gt;&lt;br&gt;
-&lt;/form&gt;
+&lt;?php 
+$errors = '';
+  //'dylant.aus@gmail.com'; //<-----Put Your email address here.
+if(empty($_POST['name'])  || 
+   empty($_POST['email']) || 
+   empty($_POST['message']))
+
+{
+    $errors .= "
+ Error: all fields are required";
+}
+$myemail = $_POST['myemail'];
+$name = $_POST['name']; 
+$email_address = $_POST['email']; 
+$message = $_POST['message']; 
+$answer = $_POST['answer'];
+$type = $_POST['type'];
+
+if (!preg_match(
+"/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/i", 
+$email_address))
+{
+    $errors .= "
+ Error: Invalid email address";
+}
+
+if( empty($errors))
+{
+  $to = $myemail; 
+  $email_subject = "Riddle Submission By: $name";
+  $email_body = "A new riddle has been submitted/n".
+  "
+ Author: $name 
+ Email: $email_address 
+ Type Of Riddle: 
+
+ $type 
+ Riddle: 
+
+ $message 
+ Answer 
+
+ $answer"; 
+  
+  $headers = "From: $myemail
+"; 
+  $headers .= "Reply-To: $email_address";
+  
+  mail($to,$email_subject,$email_body,$headers);
+
+  header('Location:https://dylanturner.tech');
+} 
+?&gt;
           </code>
         </pre>
       <br/>

@@ -37,6 +37,7 @@ code{
 }
 pre{
     /* basic modern patch */
+    padding: 0 !important;
     background-color: transparent;
     color: white;
     font-size: 100%;
