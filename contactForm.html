@@ -69,41 +69,22 @@
         </pre>
       <br/>
       <br/>
-      <h4>Swift:</h4>
-      <code>
-        <pre>
+      <p>In the above code we have made a very simple not working contact form. The contact form asks for your name, email, message and then has a submit button. Now we want to make it to work, which is a bit complicated if your new but hopefully you can understand this.</p>
 
-func factorial(_ pram: Int) -> Int{
-  
-  var temp = 1
-    for i in 1...pram{
-      // will run this loop 1 to n times.
-      // in this case 5.
-    }
-   return temp
-}
-var result = factorial(5)
-print(result)
+      <p>So, what we want to do is make what we call a form handler. What this does is it recieves all the inputs from the form and then does something with it - in this case sends us an email. Doing this using PHP allows us to send the email and have lots of controll over what we are doing. Note that if your web host doesn't support PHP this will not work. If your webhost doesn't support PHP there are a few ways around that, you can use another webhost that does and use the form externally or you can use a service like <a href="https://formspree.io/">formspree</a> but these services don't give you too much controll and limit the amout of emails you can send. Anyway, lets make our handler.</p>
+      <br/>
+      <h4>PHP</h4>
+      <h4 class="subtitle">contactHandler.php</h4>
+        <pre>
+          <code>
+&lt;form id=&quot;form&quot; method=&quot;POST&quot; name=&quot;contactform&quot; action=&quot;##&quot;&gt;
+  &lt;input class=&quot;full&quot; type=&quot;text&quot; name=&quot;name&quot; placeholder=&quot;Name&quot;&gt;
+  &lt;input class=&quot;full&quot; type=&quot;text&quot; name=&quot;email&quot; placeholder=&quot;yourname@something.com&quot;&gt;
+  &lt;textarea class=&quot;fullarea&quot; name=&quot;message&quot;&gt;&lt;/textarea&gt;
+  &lt;input id=&quot;submit&quot; type=&quot;submit&quot; value=&quot;Submit&quot;&gt;&lt;br&gt;
+&lt;/form&gt;
+          </code>
         </pre>
-      </code>
-      <br/>
-      <p> In the above examples we simple create a function, with a paramater which is the number of our factorial. We then pass that number into our function and then we run a loop that will loop through from 1 to our paramater. Now we want to make it so that we multiply each time the loop runs, which will give us our factorial. We can do this by setting a default value of 1, then multiplying it by i which is the loop counter.</p>
-      <br/>
-      <h4>Javascript:</h4>
-      <code>
-        <pre>
-
-function factorial(n){
-  var temp = 1;
-  for (var i = 1; i <= n; i = i + 1){
-    temp = temp * i;
-  }
-  return temp;
-}
-var result = factorial(5);
-console.log(result);
-    </pre>
-      </code>
       <br/>
       <br/>
       <h4>Swift:</h4>
@@ -189,16 +170,5 @@ print(result)
   <script type="text/Javascript">
     includeHTML();
   </script>
-
-  <script>
-    setTimeout(function(){
-     hljs.initHighlightingOnLoad();
-
-     var all = document.getElementsByTagName("CODE")[0];
-      for (var i=0, max=all.length; i < max; i++) {
-          hljs.highlightBlock(i);
-      }
-   }, 400);  
-    </script>
 
 </html>
