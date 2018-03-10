@@ -19,5 +19,6 @@ loadjscssfile("https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css"
 loadjscssfile("custom.css", "css")
 loadjscssfile("highlight/styles/sunburst.css", "css")
 loadjscssfile("highlight/highlight.pack.js", "js")
+loadjscssfile("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js", "js")
 
 
