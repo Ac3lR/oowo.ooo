@@ -193,8 +193,10 @@ print(result)
 
   <script>
     function explode(){
-    
     hljs.initHighlightingOnLoad();
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
     }
     setTimeout(explode, 2000);
     
