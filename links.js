@@ -17,7 +17,7 @@ function loadjscssfile(filename, filetype){
 loadjscssfile("https://use.fontawesome.com/releases/v5.0.7/js/all.js", "js") //dynamically load and add this .js file 
 loadjscssfile("https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css", "css") ////dynamically load and add this .css file
 loadjscssfile("custom.css", "css")
-loadjscssfile("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", "js")
-loadjscssfile("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css", "css")
+loadjscssfile("highlight/styles/default.css", "css")
+loadjscssfile("highlight/highlight.pack.js", "js")
 
 

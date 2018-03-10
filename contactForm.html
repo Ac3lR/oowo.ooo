@@ -191,6 +191,11 @@ print(result)
     includeHTML();
   </script>
   <script>
+    hljs.configure({useBR: true});
+
+    $('code pre').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
     hljs.initHighlightingOnLoad();
   </script>
 </html>
