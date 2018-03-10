@@ -37,6 +37,8 @@ code{
 	background-color: rgb(35,35,35) !important;
 	padding: 15px !important;
 	border-radius: 15px;
+	font-family: 'Source Code Pro', monospace;
+	font-size: 80% !important;
 }
 .yellow:hover{
 	color: #f2e63c !important;
@@ -48,7 +50,4 @@ pre{
     /* basic modern patch */
     padding: 0 !important;
     background-color: transparent;
-    color: white;
-    font-size: 100%;
-    font-family: 'Source Code Pro', monospace;
 }
