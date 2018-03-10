@@ -1,13 +1,6 @@
 <html>
   <head>
-     <!-- Google Ads Test -- >
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-7657183139507760",
-            enable_page_level_ads: true
-          });
-        </script>
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115152057-1"></script>
     <script>
@@ -23,74 +16,55 @@
     <script type="text/javascript" src="links.js"></script>
     <script type="text/javascript" src="include.js"></script>
     <meta name="description" content="Free Factorial Calculator Tutorial Exmaple">
-    <title>Tutorials | Factorial Calculator Javascript + Swift</title>
+    <title>Tutorials | Contact Form Tutorial PHP</title>
    <style>
 
-   #header{
-    margin-left: 20%;
-    width: 60%;
-   }
-   #hr{
-    width: 60%;
-   }
    </style>
   </head>
   <body>
     <div id="nav" include="menu.html"></div>
     <br/>
-      <section id="header" class="section">
+      <section class="width">
         <div class="container">
-          <h1 class="title">Factorial Calculator</h1>
+          <h1 class="title">Contact Form Tutorial</h1>
           <h2 class="subtitle">
-            Make a factorial calculator for n. <span class="tag is-warning">JS</span> <span class="tag is-danger">Swift</span>
+            Make a PHP Contact Form <span class="tag is-link">PHP</span>
           </h2>
           <hr id="hr"/>
         </div>
           <section class="has-text-centered">
             <h6 class="subtitle is-6">
                 <img id="authorImg" src="dylan.png" /><br/>
-                 By <a href="http://dylanturner.tech">Dylan</a> on 3/3/2018
+                 By <a href="http://dylanturner.tech">Dylan</a> on 10/3/2018
             </h6>
            </section>
         </div>
       </section>
     </body>
     <div class="content width">
-      <h1>Factorial Calculator</h1>
+      <h1>Contact Form</h1>
       
       <article class="message is-warning">
         <div class="message-body">
-          <strong>JS and Swift</strong><br/>
-          <p>This is two tutorials in one, it is written for both Javascript and Swift. Please do not get confused, there is one part for JS and the other for Swift.</p>
-        </div>
-      </article>
-
-      <article class="message is-info">
-        <div class="message-body">
-          <strong>Prerequisites</strong><br/>
-          <p>To understand this tutorial it is reccomended that you have a basic understanding of Javascript (know how to create a javascript file) or Swift. If you are doing the Swift part of this tutorial, please ensure that you have X-Code downloaded and know your way around a playground. </p>
+          <strong>PHP</strong><br/>
+          <p>Notice, this tutorial involves PHP and although it works, there is no demo that I currently have. This is beacuse most free hosting providers don't allow the use of many emails per day.</p>
         </div>
       </article>
 
       <h3>Introduction</h3>
-      <p>To make a function that prints out the factorial of a given number is pretty easy. In this tutorial you will learn how to do it in both Javascript and Swift. If you don't know what a factorial is, it is where a number is multiplied by every number below it and itself, so for example 5! (5! is 5 factorial represented mathimatically) is 1x2x3x4x5 which is 120.</p>
-      <p>Firstly, lets think about the concept as the concept is the same in both languages. We need to make a function that accepts a paramater and then it returns the factorial of that number. To make it return the factorial, we need to make it so that the number is taken in, and every number from 1 to that number is multiplied by eachother. Lets start by setting up our loops</p><br/>
-      <h4>Javascript:</h4>
+      <p>Everyone needs a contact form on their site, whether it be a personal website or a company website people need a way to get in touch. In this tutorial I will go over the simple way of doing this using PHP and HTML. <br/>
+      Lets get started by making our HTML contact form</p>
+      
+      <h4>HTML</h4>
       <code>
         <pre>
-
-function factorial(n){
-
-  var temp;
-  for (var i = 1; i <= n; i = i + 1){
-    // will run this loop 1 to n times.
-    // in this case 5.
-  }
-  return temp;
-}
-var result = factorial(5);
-console.log(result);
-    </pre>
+&lt;form id=&quot;form&quot; method=&quot;POST&quot; name=&quot;contactform&quot; action=&quot;##&quot;&gt;
+  &lt;input class=&quot;full&quot; type=&quot;text&quot; name=&quot;name&quot; placeholder=&quot;Name&quot;&gt;
+  &lt;input class=&quot;full&quot; type=&quot;text&quot; name=&quot;email&quot; placeholder=&quot;yourname@something.com&quot;&gt;
+  &lt;textarea class=&quot;fullarea&quot; name=&quot;message&quot;&gt;&lt;/textarea&gt;
+  &lt;input id=&quot;submit&quot; type=&quot;submit&quot; value=&quot;Submit&quot;&gt;&lt;br&gt;
+&lt;/form&gt;
+        </pre>
       </code>
       <br/>
       <br/>
@@ -214,5 +188,6 @@ print(result)
   
   <script>
     includeHTML();
+    hljs.initHighlightingOnLoad();
   </script>
 </html>
