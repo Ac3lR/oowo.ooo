@@ -10,12 +10,14 @@
 
       gtag('config', 'UA-115152057-1');
     </script>
-    
     <!-- End Google Analytics -->
 
     <!--Links -->
     <script type="text/javascript" src="links.js"></script>
     <script type="text/javascript" src="include.js"></script>
+
+    <link rel="stylesheet" href="highlight/styles/default.css">
+    <script src="highlight/highlight.pack.js"></script>
     <meta name="description" content="Free Factorial Calculator Tutorial Exmaple">
     <title>Tutorials | Contact Form Tutorial PHP</title>
    <style>
@@ -57,8 +59,8 @@
       Lets get started by making our HTML contact form</p>
       
       <h4>HTML</h4>
-      <code class="html">
-        <pre class="html">
+      <code>
+        <pre>
 &lt;form id=&quot;form&quot; method=&quot;POST&quot; name=&quot;contactform&quot; action=&quot;##&quot;&gt;
   &lt;input class=&quot;full&quot; type=&quot;text&quot; name=&quot;name&quot; placeholder=&quot;Name&quot;&gt;
   &lt;input class=&quot;full&quot; type=&quot;text&quot; name=&quot;email&quot; placeholder=&quot;yourname@something.com&quot;&gt;
@@ -190,12 +192,5 @@ print(result)
   <script>
     includeHTML();
   </script>
-  <script>
-    hljs.configure({useBR: true});
-
-    $('code pre').each(function(i, block) {
-      hljs.highlightBlock(block);
-    });
-    hljs.initHighlightingOnLoad();
-  </script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </html>
