@@ -77,8 +77,8 @@
       <p>To make a function that prints out the factorial of a given number is pretty easy. In this tutorial you will learn how to do it in both Javascript and Swift. If you don't know what a factorial is, it is where a number is multiplied by every number below it and itself, so for example 5! (5! is 5 factorial represented mathimatically) is 1x2x3x4x5 which is 120.</p>
       <p>Firstly, lets think about the concept as the concept is the same in both languages. We need to make a function that accepts a paramater and then it returns the factorial of that number. To make it return the factorial, we need to make it so that the number is taken in, and every number from 1 to that number is multiplied by eachother. Lets start by setting up our loops</p><br/>
       <h4>Javascript:</h4>
-      <code>
-        <pre>
+      <pre>
+        <code>
 
 function factorial(n){
 
@@ -91,13 +91,13 @@ function factorial(n){
 }
 var result = factorial(5);
 console.log(result);
-    </pre>
-      </code>
+        </code>
+      </pre>
       <br/>
       <br/>
       <h4>Swift:</h4>
-      <code>
-        <pre>
+      <pre>
+        <code>
 
 func factorial(_ pram: Int) -> Int{
   
@@ -110,14 +110,14 @@ func factorial(_ pram: Int) -> Int{
 }
 var result = factorial(5)
 print(result)
-        </pre>
-      </code>
+        </code>
+      </pre>
       <br/>
       <p> In the above examples we simple create a function, with a paramater which is the number of our factorial. We then pass that number into our function and then we run a loop that will loop through from 1 to our paramater. Now we want to make it so that we multiply each time the loop runs, which will give us our factorial. We can do this by setting a default value of 1, then multiplying it by i which is the loop counter.</p>
       <br/>
       <h4>Javascript:</h4>
-      <code>
-        <pre>
+      <pre>
+        <code>
 
 function factorial(n){
   var temp = 1;
@@ -128,13 +128,13 @@ function factorial(n){
 }
 var result = factorial(5);
 console.log(result);
-    </pre>
-      </code>
+        </code>
+      </pre>
       <br/>
       <br/>
       <h4>Swift:</h4>
-      <code>
-        <pre>
+      <pre>
+        <code>
 
 func factorial(_ pram: Int) -> Int{
 
@@ -146,8 +146,8 @@ func factorial(_ pram: Int) -> Int{
 }
 var result = factorial(5)
 print(result)
-        </pre>
-      </code>
+        </code>
+      </pre>
       <br/>
       <p>Above we have simply made a loop that will now multiply all the numbers up to 5 (our input) together. The loop will run 5 times, if we walk through the loop you can see how it works: </p>
       <p>
