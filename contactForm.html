@@ -59,6 +59,11 @@
         </div>
       </article>
 
+      <h3>If you are using a static website</h3>
+      <p>If you are using a static website and you still want to have a contact form, please read here. If you are not using a static website, skip this and carry on with the rest of the tutorial. If you want to have a working contact form, you can host your PHP somewhere else. For example, you can set the action of your contact form to be to another url e.g: 
+        &lt;form id=&quot;form&quot; method=&quot;POST&quot; name=&quot;contactform&quot; action=&quot;http://YourURL&quot;&gt; . Now you have sent the data from your form to an external host, you can have your PHP file there and it will work fine. The only issue is finding some decent hosting with good sendmail limits.
+      </p>
+
       <h3>Introduction</h3>
       <p>Everyone needs a contact form on their site, whether it be a personal website or a company website people need a way to get in touch. In this tutorial I will go over the simple way of doing this using PHP and HTML. <br/>
       Lets get started by making our HTML contact form</p>
@@ -216,5 +221,4 @@ if( empty($errors)) // 7
   <script type="text/Javascript">
     includeHTML();
   </script>
-
 </html>
