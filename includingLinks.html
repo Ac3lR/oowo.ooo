@@ -72,8 +72,8 @@
       <p>So, its ok to be a bit confused right now to what this actually does, its much easier to understand through examples. Lets get started, so we have a multi-page website with lots of different links in our meny as seen below:</p>
 
       <h4>index.html</h4>
-      <code>
-        <pre>
+      <pre>
+        <code>
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;Example&lt;/title&gt;
@@ -88,15 +88,15 @@
    &lt;!--Random body stuff here --&gt;
   &lt;/body&gt;
 &lt;/html&gt;
-        </pre>
-      </code>
+        </code>
+      </pre>
       <br/>
       <br/>
       <p> So, as you can see, sometimes files build up and it gets really messy to have them at the top of every page on your website, especially if you website has more that 5 pages. Lets say that every other page on our website also requires access to bulma, universal.css, universal.js and we also want font awesome to be on every page. So, lets make a file called "links.js" which will include all of the above links for us.</p>
       <br/>
       <h4>links.js</h4>
-      <code>
-        <pre>
+      <pre>
+        <code>
 function loadjscssfile(filename, filetype){
     // we will put our code here.
 }
@@ -104,15 +104,15 @@ loadjscssfile("https://use.fontawesome.com/releases/v5.0.7/js/all.js", "js")
 loadjscssfile("https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css", "css")
 loadjscssfile("universal.css", "css")
 loadjscssfile("universal.js", "css")
+        </code>
       </pre>
-      </code>
       <br/>
       <br/>
       <p>Now we have written a function that accepts two paramaters, filename and filetype. We have also called this function 4 times, with our 4 different files and their types. What we want to do now is make a function that wil load all of these files that we call the funtion with. Lets start off by checking out the file extenstion by creating some if statements.</p>
       <p>
       <h4>links.js</h4>
-      <code>
-        <pre>
+      <pre>
+        <code>
 function loadjscssfile(filename, filetype){
     if (filetype=="js"){
     // is a js file
@@ -128,8 +128,8 @@ loadjscssfile("https://use.fontawesome.com/releases/v5.0.7/js/all.js", "js")
 loadjscssfile("https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css", "css")
 loadjscssfile("universal.css", "css")
 loadjscssfile("universal.js", "css")
+        </code>
       </pre>
-      </code>
       <br/>
       <br/>
       <p>
@@ -145,8 +145,8 @@ loadjscssfile("universal.js", "css")
       </ul>
       </p>
       <h4>links.js</h4>
-      <code>
-        <pre>
+      <pre>
+        <code>
 function loadjscssfile(filename, filetype){
     if (filetype=="js"){
         var fileref=document.createElement('script') // 1
@@ -167,13 +167,13 @@ loadjscssfile("https://use.fontawesome.com/releases/v5.0.7/js/all.js", "js")
 loadjscssfile("https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css", "css")
 loadjscssfile("universal.css", "css")
 loadjscssfile("universal.js", "css")
+        </code>
       </pre>
-      </code>
       <br/>
       <p>Give that a test run, and it should work. If you are having issues, make sure that your HTML now looks like below as we no longer need all those excess files.</p>
       <h4>index.html</h4>
-      <code>
-        <pre>
+      <pre>
+        <code>
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;Example&lt;/title&gt;
@@ -184,8 +184,8 @@ loadjscssfile("universal.js", "css")
    &lt;!--Random body stuff here --&gt;
   &lt;/body&gt;
 &lt;/html&gt;
-        </pre>
-      </code>
+        </code>
+      </pre>
       <br/>
       <p>We now only have 2 links, one to the links.js which will load all our other files and the other to index.js as we want the index.html to have different javascript to all the other pages. If you want to test this simply, make a index.html and links.js. On both pages have "Hello World" in h1 tags and have a stylesheet with some styling for the h1 tag. Then endit the links.js to load in your css file, and the h1 tags should be as you have styled them.</p>
       <p><a href="examples/includingLinksExample.html">Here</a> is a working (very simple) demo below:</p>
