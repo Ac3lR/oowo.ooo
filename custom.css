@@ -2,7 +2,7 @@
 body{
 	font-family: 'Muli', sans-serif;
 }
-svg{
+.columns svg{
 	background-color: hsla(48, 100%, 67%,0.9) !important;
 	margin: 15px;
 	padding: 5px;
