@@ -1,3 +1,6 @@
+.navbar{
+	height: 50px !important;
+}
 .is-dark{
 	background-color: #24292e !important;
 }
