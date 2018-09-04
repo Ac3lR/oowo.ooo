@@ -1,24 +1,44 @@
+<p><span class="tag is-success">New!</span> Search for a tool! <small>Search for a tool by name or tag!</small></p>
+      <br/>
+      <input class="input is-primary" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search">
+      <br/>
+      <br/>
+      <br/>
+
 <aside class="menu" id="toolsList">
+
         <p class="menu-label">
-          General
+            General
         </p>
-        <ul class="menu-list">
+         <ul class="menu-list myUL">
+          <li>
+            <a href="https://dylanturner.tech/tools/colorChanging.html">
+              Color Changing Elements
+              <span class="tag">JS</span>
+            </a>
+          </li>
+           <li>
+            <a href="https://dylanturner.tech/tools/colorChanging.html">
+              Factorial Calculator
+              <span class="tag">JS</span>  <span class="tag">Swift</span>
+            </a>
+          </li>
+        </ul>
+
+        <p class="menu-label">
+          Form
+        </p>
+        <ul class="menu-list myUL">
           <li>
             <a href="contactForm.html">
               PHP Contact Form
-              <span class="tag is-link">PHP</span>
+              <span class="tag">Form</span> <span class="tag">PHP</span>
             </a>
           </li>
           <li>
             <a href="404.html">
-              Placeholder 2
-              <span class="tag ">Image Tools</span>
-            </a>
-          </li>
-          <li>
-            <a href="404.html">
-              Placeholder 3
-              <span class="tag ">Image Tools</span>
+              HTML Only Form (Using Formsender)
+              <span class="tag">Form</span> <span class="tag is-light">Coming Soon!</span>
             </a>
           </li>
         </ul>
@@ -26,79 +46,76 @@
         <p class="menu-label">
           Javascript
         </p>
-        <ul class="menu-list">
+        <ul class="menu-list myUL">
           <li>
             <a href="includingLinks.html">
               Including links using javascript    
-              <span class="tag is-dark">Featured</span> <span class="tag is-warning">JS</span>
+              <span class="tag is-dark">Featured</span> <span class="tag">JS</span>
             </a>
           </li>
-          <li>
-          <li>
-            <p class="menu-label">
-              Challenges 
-            </p>
-          </li>
-          <li>
-            <ul>
-              <li>
-                <a href="factorialCalculator.html">
-                  Factorial Calculator
-                 <span class="tag is-warning">JS</span> <span class="tag is-danger">Swift</span>
-                </a>
-              </li>
-              <li>
-                <a href="404.html">
-                  Pyramid Maker  
-                  <span class="tag is-warning">JS</span>
-                </a>
-              </li>
-               <li>
-                <a href="404.html">
-                  Fizz Buzz 
-                  <span class="tag is-warning">JS</span>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <p class="menu-label">
-            Code Snipets:
-          </p>
-          <li>
-            <a href="https://dylanturner.tech/tools/colorChanging.html">
-              Color Changing Elements
-              <span class="tag is-info">Snipet</span> <span class="tag is-warning">JS</span>
-            </a>
-          </li>
-        </ul>
+       </ul>
         <p class="menu-label">
-          Swift
+          iOS (Apple Apps)
         </p>
-        <ul class="menu-list">
+        <ul class="menu-list myUL">
           <li>
             <a href="appin2min.html">
               Make an app in 2 minutes     
-              <span class="tag is-dark">Featured</span> <span class="tag is-danger">Swift</span>   
+              <span class="tag">App</span> <span class="tag">Swift</span>   
             </a>
           </li>
         </ul>
         <p class="menu-label">
           More
         </p>
-        <ul class="menu-list">
+        <ul class="menu-list myUL">
           <li>
             <a href="index.html">
               Home        
             </a>
           </li>
-          <li>
+           <li>
             <a href="http://dylanturner.tech/tools/touchbar.html">
-              Touch Bar App <span class="tag is-danger">Swift</span> <span class="tag is-success">New!</span>
+             Timetable App <span class="tag is-primary">Project</span>
             </a>
           </li>
-          <li><a href="404.html">Suggest a tutorial!</a></li>
+          <li>
+            <a href="http://dylanturner.tech/tools/touchbar.html">
+              Touch Bar App <span class="tag is-primary">Project</span>
+            </a>
+          </li>
+          <li><a href="help.html">Suggest a tutorial!</a></li>
         </ul>
         <br/>
         <br/>
       </aside>
+      <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, ul, li, a, i;
+            input = document.getElementById('myInput');
+            filter = input.value.toUpperCase();
+            ul = document.getElementsByClassName("myUL");
+            var none;
+
+            for(var m = 0; m < ul.length; m++){
+              li = ul[m].getElementsByTagName('li');
+              none = false;
+              // Loop through all list items, and hide those who don't match the search query
+              for (i = 0; i < li.length; i++) {
+                  a = li[i].getElementsByTagName("a")[0];
+                  if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                      li[i].style.display = "";
+                      none = true;
+                  } else {
+                      li[i].style.display = "none";
+                  }
+              }
+              if (none == false){
+                console.log("none")
+              }
+            }
+            
+        }
+
+      </script>

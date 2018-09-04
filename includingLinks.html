@@ -44,7 +44,7 @@
         <div class="container">
           <h1 class="title">Including links with Javascript</h1>
           <h2 class="subtitle">
-             Include many css or js files using one link! <span class="tag is-dark">Featured</span> <span class="tag is-warning">JS</span>
+             Include many css or js files using one link! <span class="tag is-dark">Featured</span> <span class="tag">JS</span>
           </h2>
           <hr id="hr"/>
         </div>
@@ -71,7 +71,8 @@
       <br/>
       <p>So, its ok to be a bit confused right now to what this actually does, its much easier to understand through examples. Lets get started, so we have a multi-page website with lots of different links in our meny as seen below:</p>
 
-      <h4>index.html</h4>
+      <h4>HTML</h4>
+      <h5 class="fileName"><i class="fas fa-pencil-alt"></i>index.html</h5>
       <pre>
         <code>
 &lt;html&gt;
@@ -94,7 +95,8 @@
       <br/>
       <p> So, as you can see, sometimes files build up and it gets really messy to have them at the top of every page on your website, especially if you website has more that 5 pages. Lets say that every other page on our website also requires access to bulma, universal.css, universal.js and we also want font awesome to be on every page. So, lets make a file called "links.js" which will include all of the above links for us.</p>
       <br/>
-      <h4>links.js</h4>
+      <h4>Javascript</h4>
+      <h5 class="fileName"><i class="fas fa-pencil-alt"></i>links.js</h5>
       <pre>
         <code>
 function loadjscssfile(filename, filetype){
@@ -110,7 +112,8 @@ loadjscssfile("universal.js", "css")
       <br/>
       <p>Now we have written a function that accepts two paramaters, filename and filetype. We have also called this function 4 times, with our 4 different files and their types. What we want to do now is make a function that wil load all of these files that we call the funtion with. Lets start off by checking out the file extenstion by creating some if statements.</p>
       <p>
-      <h4>links.js</h4>
+      <h4>Javascript</h4>
+      <h5 class="fileName"><i class="fas fa-pencil-alt"></i>links.js</h5>
       <pre>
         <code>
 function loadjscssfile(filename, filetype){
@@ -144,7 +147,8 @@ loadjscssfile("universal.js", "css")
         <li>7 - Incase the file is undefined, tries to load it.</li>
       </ul>
       </p>
-      <h4>links.js</h4>
+      <h4>Javascript</h4>
+      <h5 class="fileName"><i class="fas fa-pencil-alt"></i>links.js</h5>
       <pre>
         <code>
 function loadjscssfile(filename, filetype){
@@ -171,7 +175,8 @@ loadjscssfile("universal.js", "css")
       </pre>
       <br/>
       <p>Give that a test run, and it should work. If you are having issues, make sure that your HTML now looks like below as we no longer need all those excess files.</p>
-      <h4>index.html</h4>
+      <h4>HTML</h4>
+      <h5 class="fileName"><i class="fas fa-pencil-alt"></i>index.html</h5>
       <pre>
         <code>
 &lt;html&gt;
@@ -190,6 +195,8 @@ loadjscssfile("universal.js", "css")
       <p>We now only have 2 links, one to the links.js which will load all our other files and the other to index.js as we want the index.html to have different javascript to all the other pages. If you want to test this simply, make a index.html and links.js. On both pages have "Hello World" in h1 tags and have a stylesheet with some styling for the h1 tag. Then endit the links.js to load in your css file, and the h1 tags should be as you have styled them.</p>
       <p><a href="examples/includingLinksExample.html">Here</a> is a working (very simple) demo below:</p>
       <iframe src="examples/includingLinksExample.html"></iframe>
+      <br/>
+      <br/>
       <p class="small"><i class="fas fa-info-circle"></i> I would usually provide a fiddle, but because the files in fiddles are already linked up I thought it more beneficial to make an example which can be found <a href="examples/includingLinksExample.html">here</a>.</p>
       <p>Hopefully that helped you to make your HTML neater and be able to modify links with easy, which is extremely helpful when something like fontawesome updates their script link. If you have any questions of comments, post below.</p>
       <hr/>
@@ -210,8 +217,8 @@ loadjscssfile("universal.js", "css")
 
           <div class="control">
             <div class="tags has-addons">
-              <span class="tag is-dark">Version</span>
-              <span class="tag">0.0.1</span>
+              <span class="tag is-dark">Tutorial Version</span>
+              <span class="tag">1</span>
             </div>
           </div>
         </div>
