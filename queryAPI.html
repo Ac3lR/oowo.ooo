@@ -81,7 +81,6 @@
         </code>
       </pre>
       <br/>
-      <br/>
       <p> So now we can start, and the first thing you can do is go to the API link above, and look at the beautiful blob of meaningless JSON. To make this a bit easier to look at, download <a href="http://getpostman.com">Postman</a> and look at it from there. That's better! Now, let's add the jQuery to out page:</p>
       <br/>
       <h4>HTML</h4>
@@ -91,7 +90,6 @@
 &lt;script src=&quot;http://code.jquery.com/jquery-3.3.1.js&quot;&gt;&lt;/script&gt;
         </code>
       </pre>
-      <br/>
       <br/>
       <p>Now we have jQuery, we can put the API data right into the webpage! See what I did below, highlighted with comments:</p>
       <p>
@@ -108,13 +106,77 @@
     &dollar;&lpar;&quot;&num;temp&quot;&rpar;.append&lpar;&lpar;Math.floor&lpar;&lpar;data.query.results.channel.item.condition.temp&rpar; - 32 &rpar; / 1.8 &rpar; &plus; &quot;&amp;deg&semi;C&quot;&rpar;&semi; 
     &dollar;&lpar;&quot;&num;weather&quot;&rpar;.append&lpar;data.query.results.channel.item.condition.text&rpar;&semi; 
   &rcub;&rpar;&semi;
+&lt;/script&gt;
         </code>
       </pre>
-      <br/>
       <br/>
       <p>
        Now we have a Weather Forecast built right into our website! Give yourself a pat on the back, because now you know something many many software engineers don't!
      </p>
+
+
+      <article class="message is-warning">
+        <div class="message-body">
+          <strong>Pure Javascript</strong><br/>
+          <p>Just incase you wanted to do this is pure javascript here is a snippet below. It follows the same sort of ideas as above.</p>
+        </div>
+      </article>
+
+      <h4>Pure Javascript Version</h4>
+      <h5 class="fileName"><i class="fas fa-pencil-alt"></i>index.html</h5>
+      <pre>
+        <code>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;What's the Weather Today?&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+   &lt;h1 id=&quot;date&quot;&gt;Date today: &lt;/h1&gt;
+   &lt;h1 id=&quot;min&quot;&gt;Min today: &lt;/h1&gt;
+   &lt;h1 id=&quot;max&quot;&gt;Max today: &lt;/h1&gt;
+   &lt;h1 id=&quot;temp&quot;&gt;Current temperature: &lt;/h1&gt;
+   &lt;h1 id=&quot;weather&quot;&gt;Current weather: &lt;/h1&gt;
+  &lt;/body&gt;
+
+  &lt;script&gt;
+  
+  // Gets the API
+  fetch('https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22canberra%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys').then(response => {
+  return response.json();
+  }).then(data => { 
+
+  var day = data.query.results.channel.item.forecast[0] // gets todays weather forecast, I have put the forecast into a variable day so that I don't have to type data.query.results.channel.item.forecast[0].{Whatever I want} every time.
+  console.log(day)
+
+  // Now we can use anything from the API that we want, for example we can put in todays date
+  var date = document.getElementById("date")
+  date.innerHTML = "Date today: " + day.day + " " + day.date
+
+  // We can do the min and max temp
+  var min = document.getElementById("min")
+  var max = document.getElementById("max")
+
+  min.innerHTML = "Min today: " + day.low
+  max.innerHTML = "Max today: " + day.high
+
+  // Current Temp 
+  var currentTemp = document.getElementById("temp")
+  currentTemp.innerHTML = "Current temperature: " + data.query.results.channel.item.condition.temp
+
+  // Current Weather 
+  var currentWeather = document.getElementById("weather");
+  currentWeather.innerHTML = "Current weather: " + day.text
+})
+
+&lt;/script&gt;
+
+&lt;/html&gt;
+        </code>
+      </pre>
+      <br/>
+
+
+
       <p class="is-small">Last Updated: 8/9/2018, Created 8/9/2018
         <div class="field is-grouped is-grouped-multiline">
           <div class="control">
@@ -133,7 +195,7 @@
           <div class="control">
             <div class="tags has-addons">
               <span class="tag is-dark">Tutorial Version</span>
-              <span class="tag">1</span>
+              <span class="tag">1.1</span>
             </div>
           </div>
         </div>
