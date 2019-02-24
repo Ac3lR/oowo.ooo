@@ -30,7 +30,7 @@
     <script language=javascript>
             var rev = "fwd";
             function titlebar(val){
-                var msg  = "ΛᄃΣᄂ";
+                var msg  = "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ΛᄃΣᄂ";
                 var res = " ";
                 var speed = 250;
                 var pos = val;
@@ -41,11 +41,11 @@
                         pos = pos+1;
                         scroll = msg.substr(0,pos);
                         document.title = scroll;
-                        timer = window.setTimeout("titlebar("+pos+")",speed);
+                        timer = window.setTimeout("titlebar("+pos+")",speed/3);
                     }
                     else {
                         rev = "bwd";
-                        timer = window.setTimeout("titlebar("+pos+")",speed);
+                        timer = window.setTimeout("titlebar("+pos+")",speed/3);
                     }
                 }
                 else {
