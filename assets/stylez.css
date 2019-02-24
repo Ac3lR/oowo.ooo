@@ -153,7 +153,8 @@ topp {
 .timer {
     position: absolute;
     bottom: 50%;
-    right: 50% font-size: 150%;
+    right: 50%; 
+    font-size: 150%;
 }
 
 .yuko {
