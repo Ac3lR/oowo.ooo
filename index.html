@@ -7,25 +7,9 @@
             overflow: hidden;
         }
     </style>
-    <!-- Hotjar Tracking Code for www.penguware.xyz
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 744373,
-                hjsv: 6
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script> -->
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>pεηguωαrε</title>
+    <title>A⃣   c⃣   e⃣   l⃣</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="theme-color" content="#3b3b3b">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,6 +27,44 @@
         <div id="stars3"></div>
         <div id="stars4"></div>
     </div>
+    <script language=javascript>
+            var rev = "fwd";
+            function titlebar(val){
+                var msg  = "A⃣   c⃣   e⃣   l⃣";
+                var res = " ";
+                var speed = 100;
+                var pos = val;
+                msg = "   |-"+msg+"-|";
+                var le = msg.length;
+                if(rev == "fwd"){
+                    if(pos < le){
+                        pos = pos+1;
+                        scroll = msg.substr(0,pos);
+                        document.title = scroll;
+                        timer = window.setTimeout("titlebar("+pos+")",speed);
+                    }
+                    else {
+                        rev = "bwd";
+                        timer = window.setTimeout("titlebar("+pos+")",speed);
+                    }
+                }
+                else {
+                    if(pos > 0) {
+                        pos = pos-1;
+                        var ale = le-pos;
+                        scrol = msg.substr(ale,le);
+                        document.title = scrol;
+                        timer = window.setTimeout("titlebar("+pos+")",speed);
+                    }
+                    else {
+                        rev = "fwd";
+                        timer = window.setTimeout("titlebar("+pos+")",speed);
+                    }
+                }
+            }
+            titlebar(0);
+        </script>
+
     <script>
         document.onkeypress = function(event) {
             event = (event || window.event);
@@ -82,13 +104,13 @@
             <div class="animated fadeInUp delay-250">
                 <div class="japanese">
                     <p>
-                        <font size="2000" class="japanese">ペンギン</font>
+                        <font size="2000" class="japanese">究極の知識</font>
                     </p>
                 </div>
             </div>
             <div class="animated fadeInUp">
                 <H1>
-                    PenguWare
+                    Acel
                 </H1>
             </div>
             <p>
@@ -107,11 +129,11 @@
             <center>
                 <div class="animated fadeInUp">
                     <p>
-                        <font size="2">property of STING DGI</font>
+                        <font size="2">property of Acel and aLex</font>
                     </p>
                     <!--<marquee width="30%" class="japanese2">-->
                     <i class="japanese2">
-                 <a href="https://justin.ooo/" target="_blank">owned by ju$tin</a>
+                 <a href="#" target="_blank">owned by Acel</a>
                </i>
                     <!--</marquee>-->
                 </div>
@@ -124,17 +146,20 @@
                   </a>
                   </li>-->
                     <li class="list-inline-item">
+                        <!--TODO.Login-->
                         <a href="./panel" target="_blank">
                   <i class="fas fa-file-alt" aria-hidden="true"></i>
                   </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="./forum" target="_self">
+                        <!--TODO.Forums-->
+                        <a href="#" target="_self">
                   <i class="fas fa-comments" aria-hidden="true"></i>
                   </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="./panel/apply.php" target="_self">
+                        <!--TODO.Buy-->
+                        <a href="#" target="_self">
                   <i class="fas fa-file-signature" aria-hidden="true"></i>
                   </a>
                     </li>
