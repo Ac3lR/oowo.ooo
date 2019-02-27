@@ -16,7 +16,7 @@ html {
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-image: url(../img/bg.mp4)
+    background-image: url(bg.mp4)
 }
 
 body {
@@ -97,5 +97,4 @@ video {
     transform: translateX(-50%) translateY(-50%);
     background-size: cover;
     transition: 1s opacity;
-    background: red; 
 }
