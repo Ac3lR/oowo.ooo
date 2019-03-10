@@ -27,6 +27,8 @@
         <div id="stars3"></div>
         <div id="stars4"></div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
     <script language=javascript>
             var rev = "fwd";
             function titlebar(val){
@@ -64,29 +66,73 @@
             }
             titlebar(0);
         </script>
-
     <script>
-        document.onkeypress = function(event) {
-            event = (event || window.event);
-            if (event.keyCode == 123) {
-                //alert('No F-12');
-                return false;
-            }
+    var finalLetters = "OOWO.OOO".split('');
+    var currentLetters = Array(finalLetters.length);
+    var lockedLetters = [];
+    var timesShuffled = 0;
+    for (var i = 0; i < finalLetters.length; i++) {
+        if (finalLetters[i] == ' ') {
+            lockedLetters.push(i);
+            currentLetters[i] = ' ';
         }
-        document.onmousedown = function(event) {
-            event = (event || window.event);
-            if (event.keyCode == 123) {
-                //alert('No F-keys');
-                return false;
+    }
+    
+    $(function() {
+	window.setTimeout(function() {
+		shuffleLetters();
+	}, 0);
+    })
+
+
+    function shuffleLetters() {
+        if (currentLetters != finalLetters) {
+            if (timesShuffled%3 == 0 && timesShuffled > 20) {
+                var index = timesShuffled/3-20;
+                currentLetters[index] = finalLetters[index];
+                lockedLetters.push(index);
             }
-        }
-        document.onkeydown = function(event) {
-            event = (event || window.event);
-            if (event.keyCode == 123) {
-                //alert('No F-keys');
-                return false;
+            for (var i = 0; i < currentLetters.length; i++) {
+                if (!lockedLetters.includes(i)) {
+                    currentLetters[i] = randomChar();
+                }
             }
+            $('#description').text(currentLetters.join(''));
+            timesShuffled++;
+            window.setTimeout(shuffleLetters, 10);
         }
+    }
+
+    function randomChar() {
+        var possible = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYS1234567890".split('');
+        var randomNumber = Math.floor(Math.random()*possible.length);
+        return possible[randomNumber]
+    }
+        </script>
+        <script>
+            document.onkeypress = function(event) {
+                event = (event || window.event);
+                if (event.keyCode == 123) {
+                    //alert('No F-12');
+                    return false;
+                }
+            }
+            document.onmousedown = function(event) {
+                event = (event || window.event);
+                if (event.keyCode == 123) {
+                    //alert('No F-keys');
+                    return false;
+                }
+            }
+            document.onkeydown = function(event) {
+                event = (event || window.event);
+                if (event.keyCode == 123) {
+                    //alert('No F-keys');
+                    return false;
+                }
+            }
+            
+
     </script>
     <script>
         document.addEventListener("contextmenu", function(e) {
@@ -116,9 +162,9 @@
                 </div>
             </div>
             <div class="animated fadeInUp">
-                <H1>
-                    oowo.ooo
-                </H1>
+                <h1 id="description">
+                    OOWO.OOO
+                </h1>
             </div>
             <p>
                 <div class="animated fadeInUp"></div>
