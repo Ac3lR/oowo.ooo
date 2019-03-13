@@ -110,6 +110,7 @@
     }
         </script>
         <script>
+
             document.onkeypress = function(event) {
                 event = (event || window.event);
                 if (event.keyCode == 123) {
@@ -147,11 +148,18 @@
 
 <body>
     <video autoplay controls loop preload="auto" id="player">
-            <source src="bg.mp4" type="video/mp4">
+               <script>
+                    var video = document.getElementById('player');
+                    var source = document.createElement('source');
+                    source.setAttribute('src', 'bg.mp4');
+                    video.appendChild(source);
+                    video.play();
+                    var x = document.getElementById("player").volume = 0.2;
+                </script>
+                
+        
          </video>
-            <script>
-                var x = document.getElementById("player").volume = 0.2;
-            </script>
+            
     <div class="container" style="height: 100%; display: flex; align-items: center; margin: 0 auto; padding-top: 3rem;">
         <main>
             <div class="animated fadeInUp delay-250">
