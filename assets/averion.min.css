@@ -16,7 +16,7 @@ html {
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-image: url(./bg.mp4)
+    background-image: url(./bg1.mp4)
 }
 
 body {
@@ -29,7 +29,7 @@ div.logo {
     margin: 0 auto;
     border-radius: 50%;
     border: 10px solid #fff;
-    padding: 10px
+    padding: 10px;
 }
 
 main {

@@ -151,7 +151,9 @@
                <script>
                     var video = document.getElementById('player');
                     var source = document.createElement('source');
-                    source.setAttribute('src', 'bg.mp4');
+                    var bgvideo = "bg" + (Math.floor(Math.random() * 2) + 1) + ".mp4";
+                    console.log(bgvideo);
+                    source.setAttribute('src', bgvideo);
                     video.appendChild(source);
                     video.play();
                     var x = document.getElementById("player").volume = 0.2;
